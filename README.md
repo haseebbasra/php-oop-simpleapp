@@ -23,6 +23,24 @@ Following concepts are implemented in the application
 - Traits and Exception Handling.
 
 
+## Application Explanation
+
+This is demonstration of a bookstore which sells books. People can interact with bookstore in different ways. They can purchase the books, and can manage the bookstore. Books iteself can have different properties. So different actors and objects are involved that i will use to explain the above mentioned concepts.
+
+#### Detailed Explanation of different roles
+
+A person can be a customer and a Manager. 
+
+Customers are further sub divided into 2 categories, Premium customers and Basic customers. Premium customers are exempted from paying the taxes. Basic customers have to pay tax in order to purchase something from book store.
+
+Manager is used to simply show the store statistics.Becuase there is no Db i am adding some basic functions.
+
+A book can have ISBN, Title, Author, Description and availability option.
+
+
+## Code explanation.
+
+Code explanation and concept marking is added wherever needed. A thorough look at the code can help those new with PHP OOP to understand the concepts and how they are used in real world.
 
 
 
