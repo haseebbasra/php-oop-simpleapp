@@ -1,11 +1,13 @@
 <?php
-
 /*
  * @Package php-oop-simpleapp
  * @Author Haseeb Basra
  * https://www.shallibegin.com
  * Customer Class: Contains properties and methods for customers class
  */
+
+namespace BookStore\Domain;
+
 
 class Customer {
 

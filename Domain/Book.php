@@ -7,6 +7,8 @@
  * Books class: Contains properties and methods for books class
  */
 
+namespace BookStore\Domain;
+
 class Book
 {
     //Properties of book

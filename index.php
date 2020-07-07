@@ -6,11 +6,16 @@ ini_set('display_errors', 'true');
  * https://www.shallibegin.com
  * Index file to show the results of various functions of this application
  */
+//Include the namespaces because when class has namespace we cannot use them even if require is done
+
+use BookStore\Domain\Book;
+use BookStore\Domain\Customer; 
+//use BookStore\Domain\Customer as BookCustomers;  // you can use 'as' keyword - see bottom - do it at the end
 
 //Include required files
 
-require_once __DIR__ . '/Book.php';
-require_once __DIR__ . '/Customer.php';
+require_once __DIR__ . '/Domain/Book.php';
+require_once __DIR__ . '/Domain/Customer.php';
 
 //If there is no magic method we have to set the properties individually
 
@@ -35,8 +40,10 @@ $book=new Book(12345,"How to code",'Haseeb',0);
 
 //var_dump($book->getBookDetailsPrintable());
 //exit;
-
 $customer=new Customer(1,'Haseeb','Anwar','haseeb@shallibegin.com');
+
+//When using as keywrod with namespace
+//$customer=new BookCustomers(1,'Haseeb','Anwar','haseeb@shallibegin.com');
 
 //this will not show private properties
 //var_dump($customer);exit;
