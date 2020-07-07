@@ -43,7 +43,7 @@ spl_autoload_register('autoloader');
 //$book->available=1;
 //$book->isbn= 2222;
 //books class is instance is created and the properties are automatically set due to magic method
-$book = new Book(12345, "How to code", 'Haseeb', 0);
+$book = new Book(12345, "How to code", 'Haseeb', 10);
 
 //to get result from __toString method
 //echo $book;
@@ -80,8 +80,28 @@ $book = new Book(12345, "How to code", 'Haseeb', 0);
 
 $basicCustomer=new Basic(1,'Haseeb','Anwar','haseeb@shallibegin.com');
 
-$premiumCustomer=new Basic(1,'John','Doe','haseeb@shallibegin.com');
+$premiumCustomer=new Premium(1,'John','Doe','haseeb@shallibegin.com');
 
-var_dump($basicCustomer->getFullname());
-var_dump($premiumCustomer->getFullname());
+//var_dump($basicCustomer->getFullname());
+//var_dump($premiumCustomer->getFullname());
+//exit;
+
+//var_dump(checkIfValid($basicCustomer, $book->available));
+//var_dump($premiumCustomer->getType()); // ADDED JUST TO SHOW SOME TEXT ON SCREEN
+
+var_dump($basicCustomer->pay(20));
+var_dump($basicCustomer->isExtentOfTaxes());
+
+var_dump($premiumCustomer->pay(20));
+var_dump($premiumCustomer->isExtentOfTaxes());
 exit;
+
+
+function checkIfValid(Customer $customer, $books) {
+    
+//    var_dump($books);exit;
+	// type hint Customer class
+//    var_dump($books >= $customer->getAmountToBorrow());
+//    exit;
+	return ($books >= $customer->getAmountToBorrow() ? "Books ready to be purchased" : "You cannot buy" );
+}

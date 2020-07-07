@@ -10,7 +10,7 @@ namespace Bookstore\Domain\Customer;
 
 use Bookstore\Domain\Customer;
 
-class Basic extends Customer {
+class Basic implements Customer {
 	// we already have all the properties and methods available in here
 	// the ones that are defined in the Customer and Person
 
@@ -25,5 +25,13 @@ class Basic extends Customer {
 
 	public function getType() {
 		return 'Basic';
+	}
+        // adding thse methods because Customer implemented Payer interface
+	public function pay(float $amount) {
+		return "Paying $amount";
+	}
+
+	public function isExtentOfTaxes() {
+		return 'You gotta pay tax mate!';
 	}
 }

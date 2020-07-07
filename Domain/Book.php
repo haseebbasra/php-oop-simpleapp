@@ -32,9 +32,9 @@ class Book
     /*
      * This magic method automatically returns the code when class is echoed out
      */
-    public function __toString() {
-        return $this->title;
-    }
+//    public function __toString() {
+//        return $this->title;
+//    }
     /*
      * Method to get the book details
      */
