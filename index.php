@@ -68,5 +68,8 @@ $customer = new Customer(1, 'Haseeb', 'Anwar', 'haseeb@shallibegin.com');
 
 //static method calling
 
-var_dump(Customer::getLastId());
-var_dump($customer::getLastId());
+//var_dump(Customer::getLastId());
+//var_dump($customer::getLastId());
+
+var_dump($customer->sayHi());
+exit;

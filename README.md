@@ -31,6 +31,8 @@ This is demonstration of a bookstore which sells books. People can interact with
 
 A person can be a customer and a Manager.
 
+Person has first name and surname
+
 Customer has id,firstname,surname,email 
 
 Customers are further sub divided into 2 categories, Premium customers and Basic customers. Premium customers are exempted from paying the taxes. Basic customers have to pay tax in order to purchase something from book store.

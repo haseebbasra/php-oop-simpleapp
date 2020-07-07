@@ -8,22 +8,25 @@
 
 namespace BookStore\Domain;
 
-
-class Customer {
+//Customer is also a person lets extend customer from Person
+class Customer extends Person {
 
     //this variable is called static to get accessed by static function
     private static $lastId = 2;
     
     //This class has some private methods and its called encapsulation
     private $id;
-    public $firstname;
-    private $surname;
+   
+//    public $firstname;
+//    private $surname;
     private $email;
 
     public function __construct($id, $firstname, $surname, $email) {
+        
+        parent::__construct($firstname,$surname);
         $this->id = $id;
-        $this->firstname = $firstname;
-        $this->surname = $surname;
+//        $this->firstname = $firstname;
+//        $this->surname = $surname;
         $this->email = $email;
     }
 
@@ -34,15 +37,18 @@ class Customer {
         return self::$lastId;
     }
 
-    // accessor - getter method
-    public function getFirstname() {
-        return $this->firstname;
-    }
-
-    // accessor - getter method
-    public function getSurname() {
-        return $this->surname;
-    }
+    //using from parent now it was initially here for testing purposes
+    
+    
+//    // accessor - getter method
+//    public function getFirstname() {
+//        return $this->firstname;
+//    }
+//
+//    // accessor - getter method
+//    public function getSurname() {
+//        return $this->surname;
+//    }
 
     // accessor - getter method
     public function getFullname() {
@@ -60,4 +66,10 @@ class Customer {
         $this->email = $email;
     }
 
+    
+    //overrided method, this method is also in the parent class
+      public function sayHi() {
+//         return parent::sayHi();
+        return 'Hi, Customer whats up? ' . $this->firstname;
+    }
 }
