@@ -44,7 +44,7 @@ A book can have ISBN, Title, Author, Description and availability option.
 
 ## Code explanation.
 
-Code explanation and concept marking is added wherever needed. A thorough look at the code can help those new with PHP OOP to understand the concepts and how they are used in real world.
+Code explanation and concept marking is added wherever needed. A thorough look at the code can help those new with PHP OOP to understand the concepts and how they are used in real world. Make sure to visit different commits and how the code of repository looked like at that time to understand in a better way
 
 
 ## How to Use
