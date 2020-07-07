@@ -18,7 +18,7 @@ class Book
     /*
      * This magic method would be called whenever we instantiate this class
      */
-    public function __construct($isbn,$title,$author,$available) {
+    public function __construct($isbn,$title,$author,$available = 1 ) {
        
         $this->isbn=$isbn;
         $this->title=$title;
@@ -26,7 +26,13 @@ class Book
         $this->available=$available;
         
     }
-    
+  
+    /*
+     * This magic method automatically returns the code when class is echoed out
+     */
+    public function __toString() {
+        return $this->title;
+    }
     /*
      * Method to get the book details
      */

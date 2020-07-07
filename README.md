@@ -29,7 +29,9 @@ This is demonstration of a bookstore which sells books. People can interact with
 
 #### Detailed Explanation of different roles
 
-A person can be a customer and a Manager. 
+A person can be a customer and a Manager.
+
+Customer has id,firstname,surname,email 
 
 Customers are further sub divided into 2 categories, Premium customers and Basic customers. Premium customers are exempted from paying the taxes. Basic customers have to pay tax in order to purchase something from book store.
 
