@@ -9,8 +9,9 @@
 namespace Bookstore\Domain\Customer;
 
 use Bookstore\Domain\Customer;
+use Bookstore\Domain\Person;
 
-class Premium implements Customer {
+class Premium extends Person implements Customer {
 	// we already have all the properties and methods available in here
 	// the ones that are defined in the Customer and Person
 

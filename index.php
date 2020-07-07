@@ -10,12 +10,13 @@ ini_set('display_errors', 'true');
 
 //Include the namespaces because when class has namespace we cannot use them even if require is done
 
-use BookStore\Domain\Book;
-use BookStore\Domain\Customer;
-
+use Bookstore\Domain\Book;
+use Bookstore\Domain\Customer;
+// use new ones customer/Basic and Premium
 use Bookstore\Domain\Customer\Basic;
 use Bookstore\Domain\Customer\Premium;
-
+// use manager
+use Bookstore\Domain\Manager;
 //use BookStore\Domain\Customer as BookCustomers;  // you can use 'as' keyword - see bottom - do it at the end
 //Include required files
 
@@ -97,9 +98,20 @@ $premiumCustomer=new Premium(1,'John','Doe','haseeb@shallibegin.com');
 //exit;
 
 
-var_dump(processPayment($basicCustomer, 20));
-var_dump(processPayment($premiumCustomer, 20));
-exit;
+//var_dump(processPayment($basicCustomer, 20));
+//var_dump(processPayment($premiumCustomer, 20));
+//exit;
+
+var_dump($basicCustomer->getId()); // 5
+var_dump($premiumCustomer->getId()); // 6
+
+// TESTING TRAIT PART TWO
+
+$manager = new Manager(); // 'use' manager on top
+$manager->sign(); // sign is not in actual Manager but in the trait that is being used there
+
+// trait second part testing
+$manager->makeSign(); // signing in communicator - IN COMMUNICATOR
 
 function checkIfValid(Customer $customer, $books) {
     

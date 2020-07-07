@@ -9,18 +9,15 @@
 
 namespace BookStore\Domain;
 
-class Person {
+// use trait
+use Bookstore\Utils\Unique;
 
+class Person {
+use Unique;
     // protected visibility
     protected $firstname;
     protected $surname;
-    private static $lastId = 2;
-    //This class has some private methods and its called encapsulation
-    private $id;
-//    public $firstname;
-//    private $surname;
-    private $email;
-
+   
     // constructor
 //    public function __construct($firstname, $surname) {
 //        $this->firstname = $firstname;
@@ -30,14 +27,16 @@ class Person {
     public function __construct($id, $firstname, $surname, $email) {
         // $this->id = $id;
 
-        if ($id == null) {
-            $this->id = ++self::$lastId; // create getId accessor so that we can see
-        } else {
-            $this->id == $id;
-            if ($id > self::$lastId) {
-                self::$lastId = $id;
-            }
-        }
+//        if ($id == null) {
+//            $this->id = ++self::$lastId; // create getId accessor so that we can see
+//        } else {
+//            $this->id == $id;
+//            if ($id > self::$lastId) {
+//                self::$lastId = $id;
+//            }
+//        }
+        
+        $this->setId($id); // refering to trait
         $this->firstname = $firstname;
         $this->surname = $surname;
         $this->email = $email;
