@@ -9,7 +9,7 @@
 namespace BookStore\Domain;
 
 //Customer is also a person lets extend customer from Person
-class Customer extends Person {
+abstract class Customer extends Person {
 
     //this variable is called static to get accessed by static function
     private static $lastId = 2;
@@ -49,6 +49,10 @@ class Customer extends Person {
 //    public function getSurname() {
 //        return $this->surname;
 //    }
+    //these are abstract functions and should be implemented in classes that extend it
+    	abstract public function getMonthlyFee();
+	abstract public function getAmountToBorrow();
+	abstract public function getType();
 
     // accessor - getter method
     public function getFullname() {

@@ -13,6 +13,9 @@ ini_set('display_errors', 'true');
 use BookStore\Domain\Book;
 use BookStore\Domain\Customer;
 
+use Bookstore\Domain\Customer\Basic;
+use Bookstore\Domain\Customer\Premium;
+
 //use BookStore\Domain\Customer as BookCustomers;  // you can use 'as' keyword - see bottom - do it at the end
 //Include required files
 
@@ -48,7 +51,7 @@ $book = new Book(12345, "How to code", 'Haseeb', 0);
 //lets access different properties from $book object
 //var_dump($book->getBookDetailsPrintable());
 //exit;
-$customer = new Customer(1, 'Haseeb', 'Anwar', 'haseeb@shallibegin.com');
+//$customer = new Customer(1, 'Haseeb', 'Anwar', 'haseeb@shallibegin.com');
 
 //When using as keywrod with namespace
 //$customer=new BookCustomers(1,'Haseeb','Anwar','haseeb@shallibegin.com');
@@ -71,5 +74,14 @@ $customer = new Customer(1, 'Haseeb', 'Anwar', 'haseeb@shallibegin.com');
 //var_dump(Customer::getLastId());
 //var_dump($customer::getLastId());
 
-var_dump($customer->sayHi());
+//var_dump($customer->sayHi());
+//exit;
+
+
+$basicCustomer=new Basic(1,'Haseeb','Anwar','haseeb@shallibegin.com');
+
+$premiumCustomer=new Basic(1,'John','Doe','haseeb@shallibegin.com');
+
+var_dump($basicCustomer->getFullname());
+var_dump($premiumCustomer->getFullname());
 exit;
