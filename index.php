@@ -89,13 +89,17 @@ $premiumCustomer=new Premium(1,'John','Doe','haseeb@shallibegin.com');
 //var_dump(checkIfValid($basicCustomer, $book->available));
 //var_dump($premiumCustomer->getType()); // ADDED JUST TO SHOW SOME TEXT ON SCREEN
 
-var_dump($basicCustomer->pay(20));
-var_dump($basicCustomer->isExtentOfTaxes());
+//var_dump($basicCustomer->pay(20));
+//var_dump($basicCustomer->isExtentOfTaxes());
+//
+//var_dump($premiumCustomer->pay(20));
+//var_dump($premiumCustomer->isExtentOfTaxes());
+//exit;
 
-var_dump($premiumCustomer->pay(20));
-var_dump($premiumCustomer->isExtentOfTaxes());
+
+var_dump(processPayment($basicCustomer, 20));
+var_dump(processPayment($premiumCustomer, 20));
 exit;
-
 
 function checkIfValid(Customer $customer, $books) {
     
@@ -104,4 +108,18 @@ function checkIfValid(Customer $customer, $books) {
 //    var_dump($books >= $customer->getAmountToBorrow());
 //    exit;
 	return ($books >= $customer->getAmountToBorrow() ? "Books ready to be purchased" : "You cannot buy" );
+}
+
+
+//Polymorphism 
+
+function processPayment(Customer $customer, float $amount) {
+	// import Payer on top 'use'
+	if ($customer->isExtentOfTaxes()) {
+		// echo "You are a lucky one..";
+		return $customer->isExtentOfTaxes();
+	} else {
+		$amount *= 1.50;
+	}
+	$customer->pay($amount);
 }
