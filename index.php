@@ -49,4 +49,9 @@ $customer=new Customer(1,'Haseeb','Anwar','haseeb@shallibegin.com');
 //var_dump($customer->firstname);exit;
 
 //Using accessor
-var_dump($customer->getFullname());
+//var_dump($customer->getFullname());
+
+//static method calling
+
+//var_dump(Customer::getLastId());
+//var_dump($customer::getLastId());
