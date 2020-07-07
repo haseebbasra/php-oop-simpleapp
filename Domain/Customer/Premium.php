@@ -12,10 +12,7 @@ use Bookstore\Domain\Customer;
 use Bookstore\Domain\Person;
 
 class Premium extends Person implements Customer {
-	// we already have all the properties and methods available in here
-	// the ones that are defined in the Customer and Person
-
-	// lets add few more
+	
 	public function getMonthlyFee() {
 		return 10.0;
 	}

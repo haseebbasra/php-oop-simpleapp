@@ -8,6 +8,3 @@ trait Contract {
 		echo 'Signing the contract';
 	}
 }
-
-// lets use this trait in a class
-// create a new class Manager.php inside Domain folder

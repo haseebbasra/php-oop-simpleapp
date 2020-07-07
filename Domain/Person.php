@@ -18,24 +18,10 @@ use Unique;
     protected $firstname;
     protected $surname;
    
-    // constructor
-//    public function __construct($firstname, $surname) {
-//        $this->firstname = $firstname;
-//        $this->surname = $surname;
-//    }
+ 
 
     public function __construct($id, $firstname, $surname, $email) {
-        // $this->id = $id;
 
-//        if ($id == null) {
-//            $this->id = ++self::$lastId; // create getId accessor so that we can see
-//        } else {
-//            $this->id == $id;
-//            if ($id > self::$lastId) {
-//                self::$lastId = $id;
-//            }
-//        }
-        
         $this->setId($id); // refering to trait
         $this->firstname = $firstname;
         $this->surname = $surname;

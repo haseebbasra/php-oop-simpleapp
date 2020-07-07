@@ -12,10 +12,8 @@ use Bookstore\Domain\Customer;
 use Bookstore\Domain\Person;
 
 class Basic extends Person implements Customer {
-	// we already have all the properties and methods available in here
-	// the ones that are defined in the Customer and Person
+	
 
-//	// lets add few more
 	public function getMonthlyFee() {
 		return 5.0;
 	}
@@ -27,7 +25,7 @@ class Basic extends Person implements Customer {
 	public function getType() {
 		return 'Basic';
 	}
-        // adding thse methods because Customer implemented Payer interface
+ 
 	public function pay(float $amount) {
 		return "Paying $amount";
 	}

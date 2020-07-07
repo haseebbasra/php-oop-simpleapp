@@ -9,5 +9,5 @@ trait Communicator {
 		echo 'Signing the contract - IN COMMUNICATOR';
 	}
 
-	// go back to Manager class and use it too
+	
 }
