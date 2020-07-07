@@ -1,4 +1,5 @@
 <?php
+
 ini_set('display_errors', 'true');
 /*
  * @Package php-oop-simpleapp
@@ -6,41 +7,48 @@ ini_set('display_errors', 'true');
  * https://www.shallibegin.com
  * Index file to show the results of various functions of this application
  */
+
 //Include the namespaces because when class has namespace we cannot use them even if require is done
 
 use BookStore\Domain\Book;
-use BookStore\Domain\Customer; 
-//use BookStore\Domain\Customer as BookCustomers;  // you can use 'as' keyword - see bottom - do it at the end
+use BookStore\Domain\Customer;
 
+//use BookStore\Domain\Customer as BookCustomers;  // you can use 'as' keyword - see bottom - do it at the end
 //Include required files
 
-require_once __DIR__ . '/Domain/Book.php';
-require_once __DIR__ . '/Domain/Customer.php';
+//require_once __DIR__ . '/Domain/Book.php';
+//require_once __DIR__ . '/Domain/Customer.php';
+
+//Instead of requiring files all the time we can use autoloader to autload all the classes
+
+function autoloader($classname) {
+    $lastSlash = strpos($classname, '\\') + 1;
+    $classname = substr($classname, $lastSlash);
+    $directory = str_replace('\\', '/', $classname);
+    $filename = __DIR__ . '/' . $directory . '.php';
+//    var_dump($classname);exit;
+    require_once $filename;
+}
+
+spl_autoload_register('autoloader');
 
 //If there is no magic method we have to set the properties individually
-
 //$book= new book();
 //
 //$book->title="How to code";
 //$book->author= "Haseeb";
 //$book->available=1;
 //$book->isbn= 2222;
-
-
-
 //books class is instance is created and the properties are automatically set due to magic method
-$book=new Book(12345,"How to code",'Haseeb',0);
+$book = new Book(12345, "How to code", 'Haseeb', 0);
 
 //to get result from __toString method
 //echo $book;
 //exit;
-
-
 //lets access different properties from $book object
-
 //var_dump($book->getBookDetailsPrintable());
 //exit;
-$customer=new Customer(1,'Haseeb','Anwar','haseeb@shallibegin.com');
+$customer = new Customer(1, 'Haseeb', 'Anwar', 'haseeb@shallibegin.com');
 
 //When using as keywrod with namespace
 //$customer=new BookCustomers(1,'Haseeb','Anwar','haseeb@shallibegin.com');
@@ -60,5 +68,5 @@ $customer=new Customer(1,'Haseeb','Anwar','haseeb@shallibegin.com');
 
 //static method calling
 
-//var_dump(Customer::getLastId());
-//var_dump($customer::getLastId());
+var_dump(Customer::getLastId());
+var_dump($customer::getLastId());
